@@ -119,6 +119,7 @@ API 23: Android 6.0(M) 이상
 
 ## 5. **배포 계획**
 - **Download 방식**
+- 예시)
     1. [링크](https://ideaware-mobile.s3.ap-northeast-2.amazonaws.com/sdks/sdk-1.0.0.aar)를 클릭해 안드로이드용 아이디어웨어 SDK를 다운로드 하세요.
     2. 해당 jar파일을 안드로이드 프로젝트 폴더 밑 libs 추가합니다. (app/libs/)
     3. *app/build.gradle* 의 *dependencies* 에 `implementation files('libs/sdk-x.y.z.aar')` 추가
