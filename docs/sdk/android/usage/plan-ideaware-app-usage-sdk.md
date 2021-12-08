@@ -51,7 +51,7 @@ API 23: Android 6.0(M) 이상
   `<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />`
   
 - 권한이 없다면 `Settings.ACTION_USAGE_ACCESS_SETTINGS` 사용정보 접근 허용 시스템 화면으로 이동
-![image_app_usage_stats_settings_1.png](image_app_usage_stats_settings_1.png)![image_app_usage_stats_settings_2.png](image_app_usage_stats_settings_2.png)
+![image_app_usage_stats_settings_1.png](image_app_usage_stats_settings_1.png) | ![image_app_usage_stats_settings_2.png](image_app_usage_stats_settings_2.png)
 
 - **UsageStats(시작시간, 종료시간으로 조회)**
     1. 패키지 이름`.getPackageName()`
