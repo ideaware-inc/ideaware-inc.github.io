@@ -80,16 +80,23 @@ API 23: Android 6.0(M) 이상
 
 4. **패널 정보**
     - 패널아이디(SSAID)
-      `0d19f46d9720263c`
+      `ex) 0d19f46d9720263c`
     - 모델명
-      `SM-G950N`
-    - OS버전, 예시)10
-    - 앱버전, 예시)1.0.0
-    - 통신사, 예시)KOR SK Telecom
-    - 제조사, 예시)samsung
-    - 언어정보, 예시)KR
-    - 홈 런처 패키지이름 예시)com.sec.android.app.launcher
-    - 유심 국가 정보 예시)kr
+      `ex) SM-G950N`
+    - OS버전
+      `ex) 10`
+    - 앱버전
+      `ex) 1.0.0`
+    - 통신사
+      `ex) KOR SK Telecom`
+    - 제조사
+      `ex) samsung`
+    - 언어정보
+      `ex) KR`
+    - 홈 런처 패키지이름 
+      `ex) com.sec.android.app.launcher`
+    - 유심 국가 정보
+      `ex) kr`
 
 5. **광고아이디**
     - Android 12 이상(API 레벨 31)을 타겟팅 하는 경우, 기기의 광고 ID를 읽기 위해 추가
