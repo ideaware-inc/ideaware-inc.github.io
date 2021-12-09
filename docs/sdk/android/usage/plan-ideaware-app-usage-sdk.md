@@ -54,21 +54,21 @@ API 23: Android 6.0(M) 이상
 ![image_app_usage_stats_settings_1.png](image_app_usage_stats_settings_1.png) | ![image_app_usage_stats_settings_2.png](image_app_usage_stats_settings_2.png)
 
 - **UsageStats(시작시간, 종료시간으로 조회)**
-    1. 패키지 이름`.getPackageName()`
-    2. 마지막으로 사용된 시간`.getLastTimeUsed()`
-    3. 총 실행 시간`.getTotalTimeInForeground()`
-    4. 실행된 횟수`.getTotalTimeInForeground()`
+    - 패키지 이름`.getPackageName()`
+    - 마지막으로 사용된 시간`.getLastTimeUsed()`
+    - 총 실행 시간`.getTotalTimeInForeground()`
+    - 실행된 횟수`.getTotalTimeInForeground()`
 
 - **UsageEvents(시작시간, 종료시간으로 조회)**
-    1. 패키지 이름`.getPackageName()`
-    2. 클래스 이름`.getClassName()`
-    3. 이벤트 발생 시간`.getTimeStamp()`
-    4. 이벤트 타입`.getEventType()`
+    - 패키지 이름`.getPackageName()`
+    - 클래스 이름`.getClassName()`
+    - 이벤트 발생 시간`.getTimeStamp()`
+    - 이벤트 타입`.getEventType()`
 
 - **ConfigurationStats(시작시간, 종료시간으로 조회)**
-    1. 기기의 활성화 횟수`.getActivationCount()`
-    2. 기기의 마지막 활성화 시간`.getLastTimeActive()`
-    3. 기기의 총 활성화 시간`.getTotalTimeActive()`
+    - 기기의 활성화 횟수`.getActivationCount()`
+    - 기기의 마지막 활성화 시간`.getLastTimeActive()`
+    - 기기의 총 활성화 시간`.getTotalTimeActive()`
 
 3. **앱 데이터 사용량**
     - **NetworkStatsManager를 사용(API 23 이상)**
@@ -110,21 +110,21 @@ API 23: Android 6.0(M) 이상
     - 서비스에서 직접 SDK내부 수집함수를 호출
 
 - **SDK내부구현 포그라운드 서비스를 활용하는 경우**	
-    1. AndroidManifest.xml에 서비스 등록 필요
-    2. SDK내부 정의된 서비스를 실행하는 함수호출
-    3. 노티피케이션 알림을 띄우거나 후후의 알림아이디로 전달받아 단일알림을 유지
+    - AndroidManifest.xml에 서비스 등록 필요
+    - SDK내부 정의된 서비스를 실행하는 함수호출
+    - 노티피케이션 알림을 띄우거나 후후의 알림아이디로 전달받아 단일알림을 유지
 
 ## 3. **수집 주기 및 저장**
 - **1시간 단위로 수집**	
-    1. 서비스에서 시간단위를 체크
-    2. 1시간 단위로 데이터 수집 
+    - 서비스에서 시간단위를 체크
+    - 1시간 단위로 데이터 수집 
 - **Room 데이터베이스에 저장 및 삭제**	
-    1. 주기단위로 수집된 데이터를 저장
-    2. 자정기준 서버 업로드 이후에 삭제
+    - 주기단위로 수집된 데이터를 저장
+    - 자정기준 서버 업로드 이후에 삭제
 
 ## 4. **서버 업로드**
 - **수집된 데이터 1일 1회 업로드**	
-    1. 자정을 기준으로 전날 수집된 데이터를 암호화 한뒤 압축하여 하여 서버로 업로드 합니다.
+    - 자정을 기준으로 전날 수집된 데이터를 암호화 한뒤 압축하여 하여 서버로 업로드 합니다.
 
 ## 5. **배포 계획**
 - **Download 방식**
