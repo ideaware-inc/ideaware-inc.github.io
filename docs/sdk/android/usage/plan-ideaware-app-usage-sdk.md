@@ -29,7 +29,7 @@ API 23: Android 6.0(M) 이상
 
 3. 수집 주기 및 앱 내부 저장
     1. **1시간단위로 수집**
-    2. **Room 데이터베이스에 저장**
+    2. **Room 데이터베이스에 저장 또는 앱 캐시 파일로 저장**
 
 
 4. 서버 업로드
@@ -54,21 +54,13 @@ API 23: Android 6.0(M) 이상
 ![image_app_usage_stats_settings_1.png](image_app_usage_stats_settings_1.png) | ![image_app_usage_stats_settings_2.png](image_app_usage_stats_settings_2.png)
 
 - **UsageStats(시작시간, 종료시간으로 조회)**
-    - 패키지 이름`.getPackageName()`
-    - 마지막으로 사용된 시간`.getLastTimeUsed()`
-    - 총 실행 시간`.getTotalTimeInForeground()`
-    - 실행된 횟수`.getTotalTimeInForeground()`
+    - `앱의 패키지 이름`, `앱이 마지막으로 사용된 시간`, `앱의 총 실행 시간`, `앱이 실행된 횟수` 를 수집
 
 - **UsageEvents(시작시간, 종료시간으로 조회)**
-    - 패키지 이름`.getPackageName()`
-    - 클래스 이름`.getClassName()`
-    - 이벤트 발생 시간`.getTimeStamp()`
-    - 이벤트 타입`.getEventType()`
+    - `앱의 패키지 이름`, `앱의 클래스 이름`, `앱의 이벤트 발생 시간`, `앱의 이벤트 타입` 를 수집
 
 - **ConfigurationStats(시작시간, 종료시간으로 조회)**
-    - 기기의 활성화 횟수`.getActivationCount()`
-    - 기기의 마지막 활성화 시간`.getLastTimeActive()`
-    - 기기의 총 활성화 시간`.getTotalTimeActive()`
+    - `기기의 활성화 횟수`, `기기의 마지막 활성화 시간`, `기기의 총 활성화 시간` 를 수집
 
 3. **앱 데이터 사용량**
     - **NetworkStatsManager를 사용(API 23 이상)**
