@@ -29,9 +29,9 @@ API 23: Android 6.0(M) 이상
 1. **직접 library file을 donwload** 방식
 
 - **Download 방식**
-    1. [링크](https://ideaware-mobile.s3.ap-northeast-2.amazonaws.com/sdks/ideawaresdk-1.0.0.aar)를 클릭해 안드로이드용 아이디어웨어 앱사용기록 수집 SDK를 다운로드 하세요.
+    1. [링크](https://ideaware-mobile.s3.ap-northeast-2.amazonaws.com/sdks/ideaware-usage-sdk-1.0.0.aar)를 클릭해 안드로이드용 아이디어웨어 앱사용기록 수집 SDK를 다운로드 하세요.
     2. 해당 jar파일을 안드로이드 프로젝트 폴더 밑 libs 추가합니다. (app/libs/)
-    3. *app/build.gradle* 의 *dependencies* 에 `implementation files('libs/ideawaresdk-x.y.z.aar')` 추가
+    3. *app/build.gradle* 의 *dependencies* 에 `implementation files('libs/ideaware-usage-sdk-x.y.z.aar')` 추가
 
     ```groovy
     // app/build.gradle
@@ -57,7 +57,7 @@ API 23: Android 6.0(M) 이상
     dependencies {
         ...
         //ideaware sdk 라이브러리
-        implementation files('libs/ideawaresdk-x.y.z.aar')
+        implementation files('libs/ideaware-usage-sdk-x.y.z.aar')
 
         //room database 라이브러리
         def room_version = "2.2.6"
@@ -103,7 +103,7 @@ API 23: Android 6.0(M) 이상
     - `<uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />`	
-9. **안드로이드11(api level 30)부터 패키지검색제한** :
+9. **핸드폰 재부팅 인텐트 수신** :
     - `<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />`
 
 ```java
@@ -249,5 +249,5 @@ override fun onCreate() {
 
 ```
 ...
-2021-10-22 16:26:26.880 22584-22584/com.ideaware.myapplication D/IdeawareSDK: initSDK() called
+2022-01-17 16:26:26.880 22584-22584/com.ideaware.appusagesdksample D/IdeawareSDK: initSDK() called
 ```
