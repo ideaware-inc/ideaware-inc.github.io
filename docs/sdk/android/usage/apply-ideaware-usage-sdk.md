@@ -79,24 +79,32 @@ API 23: Android 6.0(M) 이상
 
 ## 2. **AndroidManifest.xml 에 설정 추가하기**
 
-아래 5개를 `AndroidManifest.xml` 에 추가해주면 된다.
+아래 권한을 `AndroidManifest.xml` 에 추가
 
 1. **인터넷 권한** :
     - `<uses-permission android:name="android.permission.INTERNET"/>`
-2. **네트워크 상태 체크 권한** :
-    - `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>`
-3. **SMS 획득 권한** :
-    - `<uses-permission android:name="android.permission.READ_SMS"/>`
-    - `<uses-permission android:name="android.permission.RECEIVE_SMS"/>`
-4. **기기의 광고 ID 권한** :
+2. **포그라운드 서비스 실행 권한** :
+    - `<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />`
+3. **와이파이 관련정보 접근** :
+    - `<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />`
+4. **네트워크 상태 체크 권한** :
+    - `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />`
+5. **기기의 광고 ID 권한** :
     - `<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>`
-5. **알림수집 서비스 등록** :
-    - `<service android:name="com.ideaware.sdk.service.NotificationListener"
-            android:enabled="true" android:exported="true" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
-            <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
-            </intent-filter>
-        </service>`
+6. **사용정보접근허용 접근 권한** :
+    - `<uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />`
+7. **네트워크사용량 접근 권한** :
+    - `<uses-permission
+        android:name="android.permission.READ_NETWORK_USAGE_HISTORY"
+        tools:ignore="ProtectedPermissions" />`
+8. **안드로이드11(api level 30)부터 패키지검색제한** :
+    - `<uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />`	
+9. **안드로이드11(api level 30)부터 패키지검색제한** :
+    - `<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />`
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>
@@ -109,8 +117,10 @@ API 23: Android 6.0(M) 이상
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <!--와이파이 관련정보 접근-->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--네트워크 관련정보 접근-->
+    <!--네트워크 상태 체크 권한-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--기기의 광고 ID 권한-->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
     <!--사용정보접근허용 접근 권한-->
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
@@ -228,7 +238,7 @@ override fun onCreate() {
 프로가드를 사용하실 경우 아래와 같이 예외 처리 코드를 추가해주세요.
 	
 ```java
--keep class com.ideaware.sdk.** {*;}
+-keep class com.ideaware.sdk.usage.** {*;}
 ```
 	
 ### 5. 확인
