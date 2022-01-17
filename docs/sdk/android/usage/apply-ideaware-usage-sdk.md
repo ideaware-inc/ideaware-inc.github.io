@@ -192,8 +192,8 @@ override fun onCreate() {
     }
 ```
 **사용정보 접근 권한 획득시 노출 예시 화면**
-	
-![image_guide_aos_1.jpeg](image_guide_aos_1.jpeg)
+
+![image_guide_aos_2.jpeg](image_guide_aos_2.jpeg) | ![image_guide_aos_3.jpeg](image_guide_aos_3.jpeg) 	
 
 
 
@@ -230,7 +230,7 @@ override fun onCreate() {
 
 **알림이 동작할때 화면 예시 화면**
 	
-![image_guide_aos_2.jpeg](image_guide_aos_2.jpeg) | ![image_guide_aos_3.jpeg](image_guide_aos_3.jpeg) 
+![image_guide_aos_1.jpeg](image_guide_aos_1.jpeg)
 
 
 ## 4. 프로가드(ProGuard) 적용하기
