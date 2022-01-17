@@ -16,10 +16,11 @@ API 23: Android 6.0(M) 이상
 1. 라이브러리 추가하기
 2. AndroidManifest.xml 에 설정 추가
 3. 코드에 추가하기
-    1. **IdeawareSDK.init()** 추가
-    2. **사용정보 접근 허용 권한 획득**
-    3. **사용자 성별, 생년 정보 전달**	
-    4. **알림 문구 및 아이콘리소스 전달**	
+    1. **IdeawareSDK.init()** 필수
+    2. **사용정보 접근 허용 권한 획득** 필수
+    3. **알람매니저 동작** 필수
+    4. **사용자 성별, 생년 정보 전달** 옵션	
+    5. **알림 문구 및 아이콘리소스 전달** 옵션
 4. 프로가드(Proguard)에 예외추가 하기
 5. 확인
     1. SDK가 제대로 적용됐는지 확인
@@ -196,6 +197,21 @@ override fun onCreate() {
 ![image_guide_aos_2.jpeg](image_guide_aos_2.jpeg) | ![image_guide_aos_3.jpeg](image_guide_aos_3.jpeg) 	
 
 
+**알람매니저 동작**
+
+SDK의 알람매니저를 동작시키기위해 앱 실행시 동작하는 액티비티 onCreate() 에서 *IdeawareUsageSDK.refreshAlarmTrigger(this)* 와 *IdeawareUsageSDK.requestUsageStatsPermission(this)*메서드를 추가합니다. 
+앱을 재 실행해도 이미 설정된 알람이 있을 경우에는 알람매니저랑 재 설정 하지 않습니다.
+
+**예시 - Activity의 onCreate()에서 수행할 경우**
+```java
+import com.ideaware.sdk.usage.IdeawareUsageSDK
+
+override fun onCreate() {
+        super.onCreate()
+	IdeawareUsageSDK.refreshAlarmTrigger(this)//알람매니저 시간을 재설정
+    }
+```
+	
 
 **사용자 성별, 생년 정보 전달**	
 
