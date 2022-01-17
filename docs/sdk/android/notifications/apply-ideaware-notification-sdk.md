@@ -28,9 +28,9 @@ API 21: Android 5.0(Lollipop) 이상
 1. **직접 library file을 donwload** 방식
 
 - **Download 방식**
-    1. [링크](https://ideaware-mobile.s3.ap-northeast-2.amazonaws.com/sdks/ideawaresdk-1.0.0.aar)를 클릭해 안드로이드용 아이디어웨어 알림 수집 SDK를 다운로드 하세요.
+    1. [링크](https://ideaware-mobile.s3.ap-northeast-2.amazonaws.com/sdks/ideaware-notifications-sdk-1.0.0.aar)를 클릭해 안드로이드용 아이디어웨어 알림 수집 SDK를 다운로드 하세요.
     2. 해당 jar파일을 안드로이드 프로젝트 폴더 밑 libs 추가합니다. (app/libs/)
-    3. *app/build.gradle* 의 *dependencies* 에 `implementation files('libs/ideawaresdk-x.y.z.aar')` 추가
+    3. *app/build.gradle* 의 *dependencies* 에 `implementation files('libs/ideaware-notifications-sdk-x.y.z.aar')` 추가
 
     ```groovy
     // app/build.gradle
@@ -56,7 +56,7 @@ API 21: Android 5.0(Lollipop) 이상
     dependencies {
         ...
         //ideaware sdk 라이브러리
-        implementation files('libs/ideawaresdk-x.y.z.aar')
+        implementation files('libs/ideaware-notifications-sdk-x.y.z.aar')
 
         //room database 라이브러리
         def room_version = "2.2.6"
