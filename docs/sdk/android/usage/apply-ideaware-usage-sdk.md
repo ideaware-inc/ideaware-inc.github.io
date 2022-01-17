@@ -109,7 +109,7 @@ API 23: Android 6.0(M) 이상
 ```java
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.ideaware.sdk.myapplication" >
+  package="com.ideaware.appusagesdksample" >
 
     <!--인터넷사용권한-->
     <uses-permission android:name="android.permission.INTERNET" />
