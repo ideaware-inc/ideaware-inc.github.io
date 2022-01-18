@@ -199,7 +199,7 @@ override fun onCreate() {
 
 **알람매니저 동작**
 
-SDK의 알람매니저를 동작시키기위해 앱 실행시 동작하는 액티비티 onCreate() 에서 *IdeawareUsageSDK.refreshAlarmTrigger(this)* 와 *IdeawareUsageSDK.requestUsageStatsPermission(this)*메서드를 추가합니다. 
+SDK의 알람매니저를 동작시키기위해 앱 실행시 동작하는 액티비티 onCreate() 에서 *IdeawareUsageSDK.refreshAlarmTrigger(this)* 메서드를 추가합니다. 
 앱을 재 실행해도 이미 설정된 알람이 있을 경우에는 알람매니저랑 재 설정 하지 않습니다.
 
 **예시 - Activity의 onCreate()에서 수행할 경우**
