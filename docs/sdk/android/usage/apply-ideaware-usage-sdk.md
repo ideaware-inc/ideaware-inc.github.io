@@ -75,6 +75,10 @@ API 23: Android 6.0(M) 이상
         implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.13.5'
         implementation 'com.amazonaws:aws-android-sdk-cognito:2.13.5'
         implementation 'com.amazonaws:aws-android-sdk-s3:2.13.5'
+	
+	//WorkManager 라이브러리
+        def work_version = "2.7.1"
+        implementation("androidx.work:work-runtime-ktx:$work_version")
     }
     ```
 
