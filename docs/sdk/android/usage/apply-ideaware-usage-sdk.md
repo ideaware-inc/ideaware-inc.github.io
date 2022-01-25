@@ -45,6 +45,11 @@ API 23: Android 6.0(M) 이상
 
     android {
         ...
+	 defaultConfig {
+	   ...
+           targetSdk 31
+        }
+	
         compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
