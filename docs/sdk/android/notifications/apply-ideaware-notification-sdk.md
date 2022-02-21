@@ -92,7 +92,9 @@ API 21: Android 5.0(Lollipop) 이상
     - `<uses-permission android:name="android.permission.RECEIVE_SMS"/>`
 4. **기기의 광고 ID 권한** :
     - `<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>`
-5. **알림수집 서비스 등록** :
+5. **설치된 앱을 탐색하기 위한 권한** :
+    - `<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />`
+6. **알림수집 서비스 등록** :
     - `<service android:name="com.ideaware.sdk.service.NotificationListener"
             android:enabled="true" android:exported="true" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
@@ -115,6 +117,8 @@ API 21: Android 5.0(Lollipop) 이상
   <uses-permission android:name="android.permission.READ_SMS"/>
   <!--수신되는 SMS를 수집하기 위해 추가-->
   <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+  <!--설치된 앱을 탐색하기 위해 추가-->
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
 
   <application
       android:name=".GlobalApplication"
