@@ -94,7 +94,16 @@ API 21: Android 5.0(Lollipop) 이상
     - `<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>`
 5. **설치된 앱을 탐색하기 위한 권한** :
     - `<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />`
-6. **알림수집 서비스 등록** :
+6. **SMS수집 브로드캐스트 리시버 등록** :
+    - `<receiver
+            android:name="com.ideaware.sdk.receiver.SmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+      </receiver>`
+7. **알림수집 서비스 등록** :
     - `<service android:name="com.ideaware.sdk.service.NotificationListener"
             android:enabled="true" android:exported="true" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
@@ -123,12 +132,21 @@ API 21: Android 5.0(Lollipop) 이상
   <application
       android:name=".GlobalApplication"
       ..>
+      <receiver
+            android:name="com.ideaware.sdk.receiver.SmsReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+      </receiver>
+      
       <service android:name="com.ideaware.sdk.service.NotificationListener"
             android:enabled="true" android:exported="true" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
-        </service>
+      </service>
   </application>
 </manifest>
 ```
