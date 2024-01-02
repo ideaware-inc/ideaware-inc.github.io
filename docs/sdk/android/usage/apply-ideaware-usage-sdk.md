@@ -64,27 +64,26 @@ API 23: Android 6.0(M) 이상
         ...
         //ideaware sdk 라이브러리
         implementation files('libs/ideaware-usage-sdk-x.y.z.aar')
-
-        //room database 라이브러리
-        def room_version = "2.2.6"
-        implementation("androidx.room:room-runtime:$room_version")
-        kapt "androidx.room:room-compiler:$room_version"
-
-        //adid획득을 위한 라이브러리
-        implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
-	
-        //json객체를 직렬화,역직렬화 하기위한 gson 라이브러리
-        implementation 'com.google.code.gson:gson:2.8.5'
-	
-        //aws s3 파일전송 라이브러리
-        implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.13.5'
-        implementation 'com.amazonaws:aws-android-sdk-cognito:2.13.5'
-        implementation 'com.amazonaws:aws-android-sdk-s3:2.13.5'
-	
-        //WorkManager 라이브러리
-        def work_version = "2.7.1"
-        implementation("androidx.work:work-runtime-ktx:$work_version")
     }
+    ```
+    4. ideaware 앱사용기록 수집 SDK에서 사용하는 라이브러리는 다음과 같습니다
+    ```groovy
+    implementation 'androidx.room:room-runtime:2.3.0'
+    implementation 'androidx.room:room-ktx:2.3.0'
+    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.15.+@aar') { transitive = true }
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.13.5'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.13.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.13.5'
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:26.2.0'
+    ```
+    5. AndroidX 사용하는 경우
+    ```groovy
+    gradle.properties ::
+    * android.useAndroidX=true
+    * android.enableJetifier=true
     ```
 
 ## 2. **AndroidManifest.xml 에 설정 추가하기**
