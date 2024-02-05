@@ -18,7 +18,8 @@ API 21: Android 5.0(Lollipop) 이상
 3. 코드에 추가하기
     1. **IdeawareSDK.init()** 추가
     2. **알림수집 권한 획득 팝업 추가**
-    3. **SMS권한 획득 기능 추가**	
+    3. **SMS권한 획득 기능 추가**
+    4. **사용자 성별, 생년 정보 전달** (옵션)	
 4. 프로가드(Proguard)에 예외추가 하기
 5. 확인
     1. SDK가 제대로 적용됐는지 확인
@@ -246,6 +247,25 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 **SMS 권한획득시 노출 예시 화면**
 	
 ![image_guide_aos_2.jpeg](image_guide_aos_2.jpeg) | ![image_guide_aos_3.jpeg](image_guide_aos_3.jpeg) | ![image_guide_aos_4.jpeg](image_guide_aos_4.jpeg) | ![image_guide_aos_5.jpeg](image_guide_aos_5.jpeg)
+	
+
+**사용자 성별, 생년 정보 전달**	
+
+앱에서 사용자의 성별, 또는 생년 정보를 보유하고 있다면 전달이 가능합니다.
+```java
+import com.ideaware.sdk.usage.IdeawareUsageSDK
+
+override fun onCreate() {
+	super.onCreate()
+	//성별
+	IdeawareSDK.setUserGenderType(this, GenderType.MALE.name)//남성일 경우
+	IdeawareSDK.setUserGenderType(this, GenderType.FEMAIL.name)//여성일 경우
+	IdeawareSDK.setUserGenderType(this, "")//없을 경우, 해당코드를 작성하지 않아도 없음으로 판단
+
+	//생년
+	IdeawareSDK.setUserBirth(this, "yyyy-MM-dd")//형식 동일하게 필수
+    }
+```
 
 ## 4. 프로가드(ProGuard) 적용하기
 
