@@ -229,9 +229,14 @@ import com.ideaware.sdk.usage.IdeawareUsageSDK
 
 override fun onCreate() {
 	super.onCreate()
+
+	//성별
 	IdeawareUsageSDK.setUserGenderType(this, GenderType.MALE.name)//남성일 경우
 	IdeawareUsageSDK.setUserGenderType(this, GenderType.FEMAIL.name)//여성일 경우
 	IdeawareUsageSDK.setUserGenderType(this, "")//없을 경우, 해당코드를 작성하지 않아도 없음으로 판단
+
+	//생년
+	IdeawareUsageSDK.setUserBirth(this, "yyyy-MM-dd")//형식 동일하게 필수
     }
 ```
 
