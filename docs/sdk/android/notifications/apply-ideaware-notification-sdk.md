@@ -17,9 +17,10 @@ API 21: Android 5.0(Lollipop) 이상
 2. AndroidManifest.xml 에 설정 추가
 3. 코드에 추가하기
     1. **IdeawareSDK.init()** 추가
-    2. **알림수집 권한 획득 팝업 추가**
-    3. **SMS권한 획득 기능 추가**
-    4. **사용자 성별, 생년 정보 전달** (옵션)	
+    2. **FirebaseAnalytics.getInstance(this) 선언후 IdeawareSDK.setFirebaseAnalyticsInstance(firebaseAnalytics)** 추가 (sdk firebase events log 찍기위한 옵션)
+    3. **알림수집 권한 획득 팝업 추가**
+    4. **SMS권한 획득 기능 추가**
+    5. **사용자 성별, 생년 정보 전달** (옵션)	
 4. 프로가드(Proguard)에 예외추가 하기
 5. 확인
     1. SDK가 제대로 적용됐는지 확인
